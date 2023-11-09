@@ -1,19 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-</head>
-<body>
-    <main>
-        <section id="nav"></section>
-        <section id="main"></section>
-        <section id="artist"></section>
-    </main>
-    <footer id="player">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="icon" href="/spotify/spotify.png" />
+    <link rel="stylesheet" href="/spotify/search.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Spotify | Home</title>
+  </head>
+  <body>
+    <header>
+      <div class="main-nav">
+        <div class="brand">
+          <i class="fa-brands fa-spotify"></i><span>Spotify</span>
+        </div>
+        <div class="home">
+          <i class="fas fa-regular fa-house"></i><span>Home</span>
+        </div>
+        <div class="search">
+          <i class="fa-solid fa-magnifying-glass"></i><span>Search</span>
+        </div>
+      </div>
+      <div class="nav-footer">
+        <div class="nav-header">
+          <div class="nav-header-main">
+            <div class="library">
+              <!-- <img
+                src="/spotify/rectangle-vertical-history.png"
+                alt="history"
+              /> -->
+              <i class="fas fa-light fa-landmark"></i>
+              <!-- <i class="fas fa-light fa-rectangle-vertical-history"></i> -->
+              <h3>Your Library</h3>
+            </div>
+            <div class="create-folder">
+              <i class="fas fa-thin fa-plus"></i>
+            </div>
+          </div>
+          <div class="nav-header-playlist">
+            <h1>Create your first playlist</h1>
+            <h2>It's easy we will help you</h2>
+            <button>Create playlist</button>
+          </div>
+          <div class="nav-header-podcast">
+            <h1>Let's find some podcast to follow</h1>
+            <h2>We'll keep you updated on new episodes</h2>
+            <button>Browse podcasts</button>
+          </div>
+        </div>
 
-    </footer>
-</body>
+        <div class="nav-footer-sitemap">
+          <div class="footer-nav-one">
+            <span>Legal</span>
+            <span>Privacy Center</span>
+            <span>Privacy Policy</span>
+            <span>Cookie Settings</span>
+          </div>
+          <div class="footer-nav-two">
+            <span>About Ads</span>
+            <span>Accessibility</span>
+          </div>
+          <div class="footer-nav-three">
+            <span>Cookies</span>
+          </div>
+          <div class="footer-change-language">
+            <button><i class="fas fa-light fa-globe"></i> English</button>
+          </div>
+        </div>
+      </div>
+    </header>
+    <main>
+      <section id="nav"></section>
+      <section id="main"></section>
+      <section id="artist"></section>
+    </main>
+    <footer id="player"></footer>
+    <script
+      src="https://kit.fontawesome.com/2b7a164169.js"
+      crossorigin="anonymous"
+    ></script>
+  </body>
 </html>
