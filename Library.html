@@ -3,57 +3,37 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spotify - Liked Songs</title>
+<title>Spotify Playlist</title>
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div id="spotify-container">
-    <div class="sidebar">
-        <nav class="nav">
-            <ul class="nav-list">
-                <li class="nav-item">Home</li>
-                <li class="nav-item">Search</li>
-                <li class="nav-item">Your Library</li>
-                <!-- Add more sidebar items here if needed -->
-            </ul>
-        </nav>
-    </div>
-    <div class="main-content">
-        <div class="playlist-header">
-            <div class="playlist-info">
-                <div class="playlist-heart"></div>
-                <h1>Liked Songs</h1>
-                <p class="song-count">264 songs</p>
-            </div>
-        </div>
-        <div class="song-list">
-            <table class="table-songs">
-                <thead>
-                    <tr>
-                        <th>#</th>
-                        <th>Title</th>
-                        <th>Artist</th>
-                        <th>Album</th>
-                        <th>Date added</th>
-                        <th><span class="duration-icon">⏱</span></th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <!-- Repeat for each song -->
-                    <tr>
-                        <td>1</td>
-                        <td>Inochi No Tabekata</td>
-                        <td>Eve</td>
-                        <td>Smile</td>
-                        <td>3 weeks ago</td>
-                        <td>3:44</td>
-                    </tr>
-                    <!-- More songs here -->
-                </tbody>
-            </table>
-        </div>
-    </div>
+
+<div class="sidebar">
+  <div class="logo">
+    <h2>Spotify</h2>
+  </div>
+  <ul>
+    <li>Home</li>
+    <li>Search</li>
+    <li>Your Library</li>
+    <li>Playlists</li>
+  </ul>
 </div>
-<script src="script.js"></script>
+    
+<div id="player-container" style="display:none;">
+    <audio controls id="audio-player">
+        <source id="audio-source" src="" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+</div>
+
+<div class="playlist" id="playlist">
+    <ul id="song-list">
+        <!-- Songs will be added here by JavaScript -->
+    </ul>
+</div>
+
+<script src="library.js"></script>
 </body>
 </html>
+

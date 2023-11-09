@@ -1,89 +1,98 @@
-body, html {
-    height: 100%;
-    margin: 0;
+body {
     font-family: 'Arial', sans-serif;
     background-color: #121212;
-    color: white;
+    color: #fff;
+    margin: 0;
+    padding: 0;
 }
 
-#spotify-container {
-    display: flex;
-}
+/* Add to your existing styles.css */
 
 .sidebar {
-    width: 230px;
-    background-color: #000;
+    width: 240px;
+    background-color: #121212;
     height: 100vh;
-    padding: 20px;
-}
-
-.nav-list {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
-
-.nav-item {
-    padding: 10px 0;
-    color: #b3b3b3;
-    cursor: pointer;
-    transition: color 0.3s;
-}
-
-.nav-item:hover {
-    color: #fff;
-}
-
-.main-content {
-    flex-grow: 1;
-    padding: 20px;
-}
-
-.playlist-header {
-    display: flex;
-    align-items: center;
-    padding: 20px 0;
-}
-
-.playlist-heart {
-    width: 50px;
-    height: 50px;
-    background-color: purple; /* Replace with a heart icon */
-    margin-right: 20px;
-}
-
-.playlist-info h1 {
-    margin: 0;
-    font-size: 2em;
-}
-
-.song-count {
+    padding: 20px 10px;
+    position: fixed;
+    overflow: auto;
+    font-size: 14px;
     color: #b3b3b3;
 }
 
-.table-songs {
-    width: 100%;
-    border-collapse: collapse;
+.sidebar .logo {
+    color: #1DB954;
+    font-size: 22px;
+    margin-bottom: 25px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.sidebar ul {
+    list-style: none;
+    padding-left: 0;
     margin-top: 20px;
 }
 
-.table-songs th,
-.table-songs td {
-    text-align: left;
+.sidebar ul li {
     padding: 10px;
-    border-bottom: 1px solid #282828;
+    cursor: pointer;
+    border-radius: 4px;
+    margin-bottom: 5px;
 }
 
-.table-songs th {
-    color: #b3b3b3;
+.sidebar ul li:hover, .sidebar ul li.active {
+    background-color: #282828;
+    color: white;
 }
 
-.table-songs td {
-    color: #fff;
+/* To use icons, you would typically include a web font icon library like Font Awesome */
+/* For instance, if using Font Awesome, you might have something like this: */
+.sidebar ul li::before {
+    content: '\f053'; /* This should be the actual unicode for the specific icon */
+    font-family: "Font Awesome 5 Free";
+    padding-right: 10px;
 }
 
-.duration-icon {
-    display: inline-block;
-    text-align: right;
-    width: 30px;
+
+/* Main content styles */
+.content {
+    margin-left: 200px;
+    padding: 20px;
 }
+
+/* Playlist styles */
+.playlist {
+    margin-top: 20px;
+}
+
+#song-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+#song-list li {
+    border-bottom: 1px solid #333;
+    padding: 10px;
+    cursor: pointer;
+}
+
+#song-list li:hover {
+    background-color: #282828;
+}
+
+/* Audio Player styles */
+#player-container {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #282828;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.5);
+}
+
+#audio-player {
+    width: 100%;
+    max-width: 1000px;
+    margin: auto;
+    display: block;
+}
+
