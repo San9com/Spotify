@@ -1,27 +1,59 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <title>My Music Library</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spotify - Liked Songs</title>
+<link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <header>
-        <h1>My Music Library</h1>
-        <input type="text" id="search" placeholder="Search">
-    </header>
-    <section class="library">
-        <h2>Playlists</h2>
-        <ul id="playlists">
-            <!-- Playlists will be populated dynamically with JavaScript -->
-        </ul>
-        <h2>Albums</h2>
-        <ul id="albums">
-            <!-- Albums will be populated dynamically with JavaScript -->
-        </ul>
-    </section>
-    <script src="script.js"></script>
+<div id="spotify-container">
+    <div class="sidebar">
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item">Home</li>
+                <li class="nav-item">Search</li>
+                <li class="nav-item">Your Library</li>
+                <!-- Add more sidebar items here if needed -->
+            </ul>
+        </nav>
+    </div>
+    <div class="main-content">
+        <div class="playlist-header">
+            <div class="playlist-info">
+                <div class="playlist-heart"></div>
+                <h1>Liked Songs</h1>
+                <p class="song-count">264 songs</p>
+            </div>
+        </div>
+        <div class="song-list">
+            <table class="table-songs">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>Title</th>
+                        <th>Artist</th>
+                        <th>Album</th>
+                        <th>Date added</th>
+                        <th><span class="duration-icon">⏱</span></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Repeat for each song -->
+                    <tr>
+                        <td>1</td>
+                        <td>Inochi No Tabekata</td>
+                        <td>Eve</td>
+                        <td>Smile</td>
+                        <td>3 weeks ago</td>
+                        <td>3:44</td>
+                    </tr>
+                    <!-- More songs here -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
 </body>
-
 </html>
