@@ -53,8 +53,15 @@ body {
   align-items: center;
 }
 .main-nav .brand > .fa-spotify {
-  font-size: 25px;
-  /* color: #1ed760; */
+  font-size: 24px;
+  color: #1ed760;
+  /* color: white; */
+}
+.fi-tr-rectangle-vertical-history {
+  color: #b3b3b3;
+  font-size: 24px;
+}
+.fi-tr-rectangle-vertical-history:hover {
   color: white;
 }
 .main-nav .home {
@@ -72,7 +79,7 @@ body {
   align-items: center;
 }
 .main-nav .search > .fa-magnifying-glass {
-  font-size: 25px;
+  font-size: 24px;
 }
 
 .nav-footer {
@@ -91,17 +98,23 @@ body {
 }
 .nav-header-main {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: space-between;
   color: #b3b3b3;
+}
+.library:hover {
+  color: white;
 }
 .library {
   display: flex;
   gap: 1rem;
-  align-items: center;
+  /* align-items: center; */
 }
 .fa-plus {
   font-size: 25px;
+}
+.fa-plus:hover {
+  color: white;
 }
 .nav-header-playlist {
   display: flex;
@@ -296,7 +309,7 @@ body {
   flex-direction: column;
   background-color: #26856b;
   border-radius: 0.5rem;
-  width: 200px;
+  width: 195px;
   padding: 1rem;
   overflow: hidden;
   height: 200px;
@@ -315,7 +328,7 @@ body {
   object-fit: cover;
   /* position: fixed; */
   /* overflow: hidden; */
-  margin-left: 8rem;
+  margin-left: 7rem;
   margin-top: 5rem;
   transform: rotate(30deg);
 }
