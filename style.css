@@ -6,11 +6,10 @@ body {
     padding: 0;
 }
 
-/* Add to your existing styles.css */
-
+/* Sidebar Styles */
 .sidebar {
-    width: 240px;
-    background-color: #121212;
+    width: 232px; /* Updated width */
+    background-color: #000; /* Updated background color */
     height: 100vh;
     padding: 20px 10px;
     position: fixed;
@@ -19,8 +18,8 @@ body {
     color: #b3b3b3;
 }
 
-.sidebar .logo {
-    color: #1DB954;
+.sidebar .logo h2 {
+    color: #1DB954; /* Spotify green */
     font-size: 22px;
     margin-bottom: 25px;
     font-weight: bold;
@@ -34,10 +33,9 @@ body {
 }
 
 .sidebar ul li {
-    padding: 10px;
+    padding: 10px 0 10px 20px; /* Updated padding for alignment */
     cursor: pointer;
     border-radius: 4px;
-    margin-bottom: 5px;
 }
 
 .sidebar ul li:hover, .sidebar ul li.active {
@@ -45,39 +43,71 @@ body {
     color: white;
 }
 
-/* To use icons, you would typically include a web font icon library like Font Awesome */
-/* For instance, if using Font Awesome, you might have something like this: */
-.sidebar ul li::before {
-    content: '\f053'; /* This should be the actual unicode for the specific icon */
-    font-family: "Font Awesome 5 Free";
-    padding-right: 10px;
+/* Playlist Container Styles */
+#playlist-container {
+    margin-left: 232px; /* Updated to match sidebar width */
+    color: white;
+    font-size: 14px; /* Adjusted font size */
 }
 
-
-/* Main content styles */
-.content {
-    margin-left: 200px;
-    padding: 20px;
+.playlist-header {
+    display: flex;
+    align-items: flex-end; /* Align items to the bottom */
+    padding: 20px 20px 20px 20px; /* Uniform padding */
+    background-color: #181818; /* Updated background color */
 }
 
-/* Playlist styles */
-.playlist {
-    margin-top: 20px;
+.playlist-cover-img {
+    width: 232px; /* Size of cover image */
+    height: 232px; /* Size of cover image */
+    border-radius: 0; /* Removed border radius for square image */
+    margin-right: 20px; /* Space between image and playlist info */
 }
 
-#song-list {
-    list-style: none;
-    padding-left: 0;
+.playlist-info {
+    flex-grow: 1; /* Allow playlist info to fill the available space */
 }
 
-#song-list li {
-    border-bottom: 1px solid #333;
-    padding: 10px;
-    cursor: pointer;
+.playlist-info h1 {
+    font-size: 24px; /* Adjusted font size */
+    margin-bottom: 4px; /* Space between playlist name and owner */
 }
 
-#song-list li:hover {
-    background-color: #282828;
+.playlist-info .playlist-owner {
+    color: #b3b3b3; /* Light grey color for secondary text */
+    font-size: 14px; /* Smaller font size */
+}
+
+.playlist-info .playlist-total-songs {
+    color: #b3b3b3; /* Light grey color for secondary text */
+}
+
+/* Song List Styles */
+.songs-list {
+    padding: 0 20px; /* Padding on the sides */
+}
+
+.song {
+    display: grid;
+    grid-template-columns: auto 1fr auto; /* Three columns: number, title & artist, duration */
+    grid-gap: 10px; /* Space between columns */
+    align-items: center;
+    padding: 10px 0; /* Padding top and bottom */
+    border-bottom: 1px solid #333; /* Lighter border color */
+}
+
+.song-number {
+    color: #b3b3b3; /* Light grey color */
+}
+
+.song-title, .song-artist, .song-album {
+    color: #fff; /* White color for text */
+    padding: 0 10px; /* Padding on the sides */
+}
+
+.song-duration {
+    color: #b3b3b3; /* Light grey color */
+    text-align: right; /* Align duration to the right */
 }
 
 /* Audio Player styles */
@@ -90,9 +120,9 @@ body {
 }
 
 #audio-player {
-    width: 100%;
-    max-width: 1000px;
-    margin: auto;
-    display: block;
+  width: 100%; /* Full width */
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 100; /* Make sure it's on top of other elements */
 }
-

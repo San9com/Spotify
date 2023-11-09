@@ -27,10 +27,26 @@
     </audio>
 </div>
 
-<div class="playlist" id="playlist">
-    <ul id="song-list">
-        <!-- Songs will be added here by JavaScript -->
-    </ul>
+<div id="playlist-container">
+    <div class="playlist-header">
+        <div class="playlist-cover">
+            <!-- Image will be set dynamically via JS or CSS -->
+        </div>
+        <div class="playlist-info">
+        <img class="playlist-cover-img" src="" alt="Playlist Cover" />
+        <h1 class="playlist-name">Liked Songs</h1>
+        <p>
+            <span class="playlist-owner">Max Malko</span> · 
+            <span class="playlist-total-songs">264 songs</span>
+        </p>
+        </div>
+    </div>
+    <div class="playlist-controls">
+        <!-- Controls like play button, shuffle, etc -->
+    </div>
+    <div class="songs-list">
+        <!-- Song items will be populated here via JS -->
+    </div>
 </div>
 
 <script src="library.js"></script>
