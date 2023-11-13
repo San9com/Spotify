@@ -6,15 +6,44 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link rel="stylesheet" href="style-spotify-specific.css">
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
     <main>
-        <section id="nav"></section>
-        <section id="main"></section>
-        <section id="artist"></section>
+        <section id="nav">
+            <div id="mainNav" class="greyBubble">
+                <article id="Home"><img src="/home-icon.png" alt="home icon"> Home</article>
+                <article id="Search"><img src="/search-icon.png" alt="search icon">Search</article>
+            </div>
+            <div id="YourLibrary" class="greyBubble"></div>
+        </section>
+        <section id="main">
+            <div id="icons"></div>
+            <h3>Good evening</h3>
+            <div id="albumList0" class="albumList"></div>
+            <h4>Your top mixes</h4>
+            <div id="albumList1" class="albumList"></div>
+            <h4>Made for you</h4>
+            <div id="albumList2" class="albumList"></div>
+            <h4>Recently played</h4>
+            <div id="albumList3" class="albumList"></div>
+            <h4>Your top mixes</h4>
+            <div id="albumList4" class="albumList"></div>
+            
+
+            <script src="script-index.js"></script>
+        </section>
+        <section id="artist">
+            <div id="artistDiv" class="greyBubble">
+                <img src="https://i.scdn.co/image/ab67616d0000b273d5512ab280dcaf3c64a5a80a" alt="Алматинский джаз, Vol. 1">
+                <p>Album: Алматинский джаз, Vol. 1</p>
+                <p>Artists: M'Dee</p></div>
+        </section>
     </main>
     <footer id="player">
-
+        <section id="currentTrack">
+            <div id="track-info"></div>
+        </section>
     </footer>
 </body>
 </html>
