@@ -17,16 +17,12 @@ body {
 }
 @font-face {
   font-family: circular;
-  src: url("/circular-std-medium-500-webfont.woff2");
+  src: url("/spotify/circular-std-medium-500-webfont.woff");
 }
 .nav-header-main .library .fa-landmark {
   font-size: 25px;
 }
-.container {
-  display: grid;
-  grid-template-areas: "section1 section2";
-  grid-gap: 1rem;
-}
+
 .header {
   display: flex;
   flex-direction: column;
@@ -337,12 +333,12 @@ body {
   display: flex;
   background-color: var(--bg-primary);
   flex-direction: column;
-  
+
   padding: 2rem;
 }
 .site-maps-search {
   display: flex;
-  width:100%;
+  width: 100%;
   justify-content: space-between;
   border-bottom: 1px solid grey;
 }
@@ -388,23 +384,56 @@ body {
   color: grey;
 }
 
-#songs{
+#songs {
   display: flex;
-  flex-direction: column;
-  
-
+  align-items: center;
+  padding-top: 6rem;
+  justify-content: space-between;
+  padding-bottom: 2rem;
+  gap: 3rem;
+  background-image: linear-gradient(#1e1258, #121212, #121212, #121212);
+  flex-wrap: wrap;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
-@media (max-width: 1310px) {
-  /* .genres {
-    width: 165px;
+.track {
+  display: flex;
+  justify-content: space-between;
+}
+.track-info {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--bg-primary);
+  padding: 1rem 1.5rem;
+  justify-content: center;
+  width: 350px;
+  border: 1px solid rgb(59, 59, 59);
+  height: 100px;
+  border-radius: 0.5rem;
+}
+.track-info p:nth-child(1) {
+  font-size: 25px;
+  background-image: linear-gradient(to right, #ff6600, #ff0000, #6600cc);
+  background-clip: text;
+  -webkit-background-clip: text; /* For some older browsers like Safari */
+  color: transparent;
+  display: inline;
+}
+.track-info p:nth-child(2) {
+  font-size: 20px;
+}
+.track-info p:nth-child(3) {
+  font-size: 15px;
+  color: grey;
+}
+
+@media (max-width: 2210px) {
+  .genres {
+    width: 200px;
   }
-  .search-container {
-    margin-left: 20.5rem;
-  }
-  .user-profile {
-    margin-right: 22rem;
-  }
+
   .genres img {
-    margin-left: 5rem;
-  } */
+    margin-left: 8rem;
+  }
 }
