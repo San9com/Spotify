@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spotify Playlist</title>
+<link rel="stylesheet" href="stylelibrary.css">
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="logo">
+    <a href="index.html"><img src="imgs/logo.png" /></a>
+  </div>
+  <ul>
+    <a href="index.html"><img class="navbaricon" src="imgs/home.png" /><li class="not-selected-tab">Home</li></a>
+    <a href="Search.html"><img class="navbaricon" src="imgs/search.png" /><li class="not-selected-tab">Search</li></a>
+    <a href="Library.html"><img class="navbaricon" src="imgs/library.png" /><li class="selected-tab">Your Library</li></a>
+  </ul>
+</div>
+    
+
+<div id="audio-player">
+    <audio id="actual-audio"></audio>
+    <img class="song-img" src="songs/song1.png" />
+    <div class="pl-cont1">
+        <h1>Best I Ever Had</h1>
+        <h2>Drake</h2>
+    </div>
+    <div class="pl-cont2">
+        <img class="heart" src="imgs/heart.png" />
+    </div>
+    <div class="pl-cont3">
+        <div class="skip-cont">
+            <img class="iconup" src="imgs/shuffle.png" />
+            <img class="iconup" src="imgs/prev.png" />
+            <div class="play-btn" id="play-btn"><img id="stopplay" src="imgs/pause.png" /></div>
+            <img class="iconup" src="imgs/next.png" />
+            <img class="iconup" src="imgs/repeat.png" />
+        </div>
+        <div class="progress-container" id="progress-container">
+            <div class="progress" id="progress"></div>
+        </div>
+    </div>
+    <div class="pl-cont4">
+        <img src="imgs/microphone.png" />
+    </div>
+    <div class="pl-cont5">
+        <img src="imgs/queue.png" />
+    </div>
+    <div class="pl-cont6">
+        <img src="imgs/computer.png" />
+    </div>
+    <div class="pl-cont7">
+        <img src="imgs/volume.png" />
+    </div>
+    <div class="pl-cont8">
+        <img src="imgs/volumebar.png" />
+    </div>
+    <div class="pl-cont9">
+        <img src="imgs/expand.png" />
+    </div>
+</div>
+
+<div id="playlist-container">
+    <div class="playlist-header">
+        <div class="playlist-cover">
+            <!-- Image will be set dynamically via JS or CSS -->
+        </div>
+        <div class="playlist-info">
+        <img class="playlist-cover-img" src="" alt="Playlist Cover" />
+        <h1 class="playlist-name">Liked Songs</h1>
+        <p>
+            <span class="playlist-owner">Max Malko</span> · 
+            <span class="playlist-total-songs">264 songs</span>
+        </p>
+        </div>
+    </div>
+    <div class="playlist-controls">
+        <!-- Controls like play button, shuffle, etc -->
+    </div>
+    <div class="songs-list" id="songs-list">
+        <!-- Song items will be populated here via JS -->
+    </div>
+</div>
+
+<script src="library.js"></script>
+</body>
+</html>
+
