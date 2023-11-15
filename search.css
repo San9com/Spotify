@@ -33,7 +33,7 @@ body {
   margin: 10px;
   gap: 0.5rem;
   grid-area: "section1";
-  width: 435px;
+  max-width: 435px;
   position: fixed;
   height: 100%;
   /* background-color: var(--bg-primary); */
@@ -212,7 +212,7 @@ body {
   grid-area: "section2";
   flex-direction: column;
 
-  margin-left: 29rem;
+  margin-left: 23rem;
 }
 .container-header {
   display: flex;
@@ -259,7 +259,7 @@ body {
 .user-profile {
   display: flex;
   gap: 2rem;
-  margin-right: 30rem;
+  margin-right: 24rem;
   align-items: center;
 }
 .user-profile #sign-up {
@@ -309,7 +309,7 @@ body {
   flex-direction: column;
   background-color: #26856b;
   border-radius: 0.5rem;
-  width: 195px;
+  width: 188px;
   padding: 1rem;
   overflow: hidden;
   height: 200px;
@@ -337,10 +337,12 @@ body {
   display: flex;
   background-color: var(--bg-primary);
   flex-direction: column;
+  
   padding: 2rem;
 }
 .site-maps-search {
   display: flex;
+  width:100%;
   justify-content: space-between;
   border-bottom: 1px solid grey;
 }
@@ -385,20 +387,24 @@ body {
 .fa-flip-horizontal {
   color: grey;
 }
-@media (max-width: 1400px) {
-  .genres {
-    width: 180px;
-  }
-  .header {
-    width: 350px;
+
+#songs{
+  display: flex;
+  flex-direction: column;
+  
+
+}
+@media (max-width: 1310px) {
+  /* .genres {
+    width: 165px;
   }
   .search-container {
-    margin-left: 23rem;
+    margin-left: 20.5rem;
   }
   .user-profile {
-    margin-right: 24rem;
+    margin-right: 22rem;
   }
   .genres img {
-    margin-left: 6rem;
-  }
+    margin-left: 5rem;
+  } */
 }

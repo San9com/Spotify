@@ -77,7 +77,7 @@
             </div>
           </div>
         </section>
-        <section class="search-container">
+        <section class="search-container" id="search-container">
           <div class="container-header">
             <div class="search-input">
               <i class="fas fa-light fa-chevron-left"></i>
@@ -86,7 +86,7 @@
                 <i class="fas fa-light fa-magnifying-glass"></i>
                 <input
                   type="text"
-                  id="search"
+                  id="search-bar"
                   name="q"
                   placeholder="What do you want to listen to?"
                 />
@@ -97,7 +97,7 @@
               <button id="log-in">Log in</button>
             </div>
           </div>
-          <div class="body">
+          <div class="body" id="albulm-body">
             <div class="body-header">
               <h2>Browse All</h2>
             </div>
@@ -254,7 +254,10 @@
               </div>
             </div>
           </div>
-          <div class="search-container-footer">
+        <div id="songs">
+        
+        </div>
+          <div class="search-container-footer" id="search-container-footer">
             <div class="site-maps-search">
               <div class="company">
                 <span>Company</span>
@@ -286,6 +289,7 @@
             </div>
           </div>
         </section>
+        
       </div>
     </main>
     <footer></footer>
@@ -294,5 +298,6 @@
       src="https://kit.fontawesome.com/2b7a164169.js"
       crossorigin="anonymous"
     ></script>
+    <script src="/spotify/search.js"></script>
   </body>
 </html>
