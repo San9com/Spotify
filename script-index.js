@@ -2,11 +2,13 @@
 // ALBUMS
 let lastClickedAlbum = document.querySelectorAll('.album:nth-child(7)');
 
+
+
 document.addEventListener('DOMContentLoaded', function () {
 
 
     const albumIdsList0 = [
-        '2ODvWsOgouMbaA5xf0RkJe,4yP0hdKOZPNshxUOjY0cZj,0P3oVJBFOv3TDXlYRhGL7s,1wFOXqEczod4HmSIHLQvKR,5YxR0EDEfl0o1gyhCrvY3R,2ODvWsOgouMbaA5xf0RkJe',
+        '2ODvWsOgouMbaA5xf0RkJe,4yP0hdKOZPNshxUOjY0cZj,0P3oVJBFOv3TDXlYRhGL7s,1wFOXqEczod4HmSIHLQvKR,5YxR0EDEfl0o1gyhCrvY3R,7lvWOiTh8oMtOldgbB4EWi',
     ];
 
     const albumIdsList1 = [
@@ -14,15 +16,15 @@ document.addEventListener('DOMContentLoaded', function () {
     ];
 
     const albumIdsList2 = [
-        '5m850t3rvdS8tiRKjRFRN3,3qVlp6pklSSwJrs1puX9Tm,0dwlqqTeFovdI0oMN4dfYQ,5FSCwTf6hQX6oKFwgsqaDv, 0lrsVMYOG5jaQdvM4jmHvY'
+        '5m850t3rvdS8tiRKjRFRN3,3qVlp6pklSSwJrs1puX9Tm,0dwlqqTeFovdI0oMN4dfYQ,5RQj4uYV6vyrDu23Sj8PrK, 0lrsVMYOG5jaQdvM4jmHvY'
     ];
 
     const albumIdsList3 = [
-        '2ODvWsOgouMbaA5xf0RkJe,4yP0hdKOZPNshxUOjY0cZj,0P3oVJBFOv3TDXlYRhGL7s,1wFOXqEczod4HmSIHLQvKR,5YxR0EDEfl0o1gyhCrvY3R,0lrsVMYOG5jaQdvM4jmHvY',
+        '6PLCFJZUcU4yrUztsa3mzm,5YzzV7NMiiVGKMve73OBYc,6T80Oi2lqkE0cJb6QKHFvg,7lvWOiTh8oMtOldgbB4EWi,5YxR0EDEfl0o1gyhCrvY3R,0lrsVMYOG5jaQdvM4jmHvY',
     ];
 
     const albumIdsList4 = [
-        '2ODvWsOgouMbaA5xf0RkJe,4yP0hdKOZPNshxUOjY0cZj,0P3oVJBFOv3TDXlYRhGL7s,1wFOXqEczod4HmSIHLQvKR,5YxR0EDEfl0o1gyhCrvY3R,0lrsVMYOG5jaQdvM4jmHvY',
+        '0w3f9KcyAau2CzhOmMCTfV,3RSgamvBlEgLEaMafK9xp7,0P3oVJBFOv3TDXlYRhGL7s,1wFOXqEczod4HmSIHLQvKR,5YxR0EDEfl0o1gyhCrvY3R,0lrsVMYOG5jaQdvM4jmHvY',
     ];
 
     fetchSpotifyData(albumIdsList0, 'albumList0');
@@ -43,7 +45,7 @@ function fetchSpotifyData(albumIds, containerId) {
 
     const basicAuth = btoa(`${clientId}:${clientSecret}`);
 
-    // Request access token 
+    // API token stuff
     fetch('https://accounts.spotify.com/api/token', {
         method: 'POST',
         headers: {
@@ -69,7 +71,7 @@ function fetchSpotifyData(albumIds, containerId) {
                     return response.json();
                 })
                 .then(albumsData => {
-                    // Handle Spotify API response data
+                    // Spotify API response data
                     displayAlbumList(albumsData.albums, containerId);
                 })
                 .catch(error => console.error('Error:', error));
@@ -80,7 +82,7 @@ function fetchSpotifyData(albumIds, containerId) {
 function displayAlbumList(albums, containerId) {
     const albumListContainer = document.getElementById(containerId);
     const mainContainer = document.getElementById('main');
-    const availableWidth = mainContainer.offsetWidth; // Get the available width of the parent container
+    const availableWidth = mainContainer.offsetWidth; 
 
     let totalWidth = 0;
 
@@ -88,46 +90,46 @@ function displayAlbumList(albums, containerId) {
         const albumElement = document.createElement('div');
         albumElement.classList.add('album');
 
-        // Album Information
+        // album Information
         const albumInfo = document.createElement('div');
         albumInfo.classList.add('album-info');
 
         if (album) {
-            // Album Cover
+            // album Cover
             const albumCover = document.createElement('img');
             const playButton = document.createElement('img');
 
-            playButton.src = '/spotify-playbutton.png';
+            playButton.src = 'assets/spotify-playbutton.png';
             playButton.id = 'playButton';
 
             if (album.images && album.images.length > 0) {
                 albumCover.src = album.images[0].url;
                 albumCover.alt = album.name;
             } else {
-                // Provide a fallback image or handle the case when images are not available
-                albumCover.src = 'path/to/fallback-image.jpg';
+                // fallback image 
+                albumCover.src = 'assets/icons/apple-touch-icon.png';
                 albumCover.alt = 'Album Cover';
             }
 
-            // Album Name
+            // album names
             const albumName = document.createElement('p');
             albumName.style.whiteSpace = 'nowrap';
             albumName.style.overflow = 'hidden';
             albumName.style.textOverflow = 'ellipsis';
             albumName.textContent = `${album.name || 'N/A'}`;
 
-            // Artists
+            // artists
             const artists = document.createElement('p');
             artists.textContent = `${album.artists ? album.artists.map(artist => artist.name).join(', ') : 'N/A'}`;
 
-            // Calculate the total width of the current album
+            //  width of the current album (later should be automatic)
             const albumWidth = 180;
 
-            // Check if adding the current album exceeds the available width
+            // check width
             if (containerId === 'albumList0'|| totalWidth + albumWidth <= availableWidth) {
                 totalWidth += albumWidth;
 
-                // Append elements to the album container
+                
                 albumInfo.appendChild(albumCover);
                 albumInfo.appendChild(playButton);
                 albumInfo.appendChild(albumName);
@@ -136,42 +138,49 @@ function displayAlbumList(albums, containerId) {
                 albumElement.appendChild(albumInfo);
 
                 albumElement.addEventListener('click', () => {
-                    // Store the information of the last clicked album
+                    
                     lastClickedAlbum = album;
                     console.log(lastClickedAlbum)
-                    // Display the last clicked album in the artistDiv
+                    
                     displayLastClickedAlbum();
                 });
 
-                // Append the album container to the list
+                // append the album container to the list
                 albumListContainer.appendChild(albumElement);
             } else {
-                // Stop adding albums if the available width is exceeded
+                // stop adding albums 
                 return;
             }
         }
     });
+
+
+    
 }
+
+
+
+
 
 // last clicked album 
 
 function displayLastClickedAlbum() {
     const artistDiv = document.getElementById('artistDiv');
-    artistDiv.innerHTML = ''; // Clear previous content
+    artistDiv.innerHTML = ''; 
     const artistSection = document.querySelector('main #artist')
     const currentTrackDiv = document.querySelector('#track-info')
+    const currentTrackTitles = document.createElement('div');
     currentTrackDiv.innerHTML = '';
 
     if (lastClickedAlbum) {
-        // Create elements to display album information
+        // create elements to display album info
         const albumCover1 = document.createElement('img');
         const albumName1 = document.createElement('p');
         const artists1 = document.createElement('p');
 
-        // Set attributes and text content
         albumCover1.src = lastClickedAlbum.images && lastClickedAlbum.images.length > 0
             ? lastClickedAlbum.images[0].url
-            : 'path/to/fallback-image.jpg';
+            : 'assets/icons/apple-touch-icon.png';
         albumCover1.alt = lastClickedAlbum.name;
 
         albumName1.textContent = `${lastClickedAlbum.name || 'N/A'}`;
@@ -183,10 +192,10 @@ function displayLastClickedAlbum() {
         const albumName2 = document.createElement('p');
         const artists2 = document.createElement('p');
 
-        // Set attributes and text content
+
         albumCover2.src = lastClickedAlbum.images && lastClickedAlbum.images.length > 0
             ? lastClickedAlbum.images[0].url
-            : 'path/to/fallback-image.jpg';
+            : 'assets/icons/apple-touch-icon.png';
         albumCover2.alt = lastClickedAlbum.name;
 
         albumName2.textContent = `${lastClickedAlbum.name || 'N/A'}`;
@@ -194,15 +203,16 @@ function displayLastClickedAlbum() {
             ? lastClickedAlbum.artists.map(artist => artist.name).join(', ')
             : 'N/A'}`;
 
-        // Append elements to the artistDiv
+        // append elements to the artistDiv
         artistSection.style.display='flex'
         artistDiv.appendChild(albumCover1);
         artistDiv.appendChild(albumName1);
         artistDiv.appendChild(artists1);
         currentTrackDiv.appendChild(albumCover2);
-        currentTrackDiv.appendChild(albumName2);
-        currentTrackDiv.appendChild(artists2);
-        
+        currentTrackDiv.appendChild(currentTrackTitles);
+        currentTrackTitles.appendChild(albumName2)
+        currentTrackTitles.appendChild(artists2);
+
     }
 }
 
@@ -210,7 +220,7 @@ function displayLastClickedAlbum() {
 
 document.addEventListener('DOMContentLoaded', function () {
     const playlistIds = [
-        '37i9dQZEVXbmdnMZWUtKbM', // Replace with your playlist IDs
+        '37i9dQZEVXbmdnMZWUtKbM', 
         '37i9dQZF1EQoqCH7BwIYb7',
         '37i9dQZEVXcFmf9jn3TICW',
         '37i9dQZF1E35zsu8P2X5re',
@@ -223,13 +233,16 @@ document.addEventListener('DOMContentLoaded', function () {
     fetchPlaylistsData(playlistIds, 'YourLibrary');
 });
 
+
+
+
 function fetchPlaylistsData(playlistIds, containerId) {
     const clientId = '8a51e3a9ce0a480d883b10ad594397b7';
     const clientSecret = '068c9639ad1344f39cccd3964a5a34f4';
 
     const basicAuth = btoa(`${clientId}:${clientSecret}`);
 
-    // Request access token using Client Credentials Flow
+    // API token stuff
     fetch('https://accounts.spotify.com/api/token', {
         method: 'POST',
         headers: {
@@ -242,7 +255,7 @@ function fetchPlaylistsData(playlistIds, containerId) {
         .then(data => {
             const accessToken = data.access_token;
 
-            // Fetch details for each playlist
+            // fetch each playlist
             playlistIds.forEach(playlistId => {
                 fetch(`https://api.spotify.com/v1/playlists/${playlistId}`, {
                     headers: {
@@ -256,7 +269,7 @@ function fetchPlaylistsData(playlistIds, containerId) {
                         return response.json();
                     })
                     .then(playlistData => {
-                        // Handle Spotify API response data (playlist data in this example)
+                        
                         displayPlaylist(playlistData, containerId);
                     })
                     .catch(error => console.error('Error:', error));
@@ -272,23 +285,23 @@ function displayPlaylist(playlist, containerId) {
         const playlistElement = document.createElement('div');
         playlistElement.classList.add('playlist');
 
-        // Playlist Information
+        // Playlist info
         const playlistInfo = document.createElement('div');
         playlistInfo.classList.add('playlist-info');
 
-        // Playlist Cover
+        // Playlist cover
         const playlistCover = document.createElement('img');
 
         if (playlist.images && playlist.images.length > 0) {
             playlistCover.src = playlist.images[0].url;
             playlistCover.alt = playlist.name;
         } else {
-            // Provide a fallback image or handle the case when images are not available
-            playlistCover.src = 'path/to/fallback-image.jpg';
+        
+            playlistCover.src = 'assets/icons/apple-touch-icon.png';
             playlistCover.alt = 'Playlist Cover';
         }
 
-        // Playlist Name
+        // Playlist naming
         const playlistName = document.createElement('p');
 
         const SecondaryInfoDiv = document.createElement('div');
@@ -299,11 +312,11 @@ function displayPlaylist(playlist, containerId) {
 
 
 
-        // Owner
+        // album owner
         const owner = document.createElement('p');
         owner.textContent = `playlist • ${playlist.owner ? playlist.owner.display_name || playlist.owner.id : 'N/A'}`;
 
-        // Append elements to the playlist container
+        // append elements to the playlist container
         playlistInfo.appendChild(playlistCover);
         playlistInfo.appendChild(SecondaryInfoDiv)
         SecondaryInfoDiv.appendChild(playlistName);
@@ -311,8 +324,36 @@ function displayPlaylist(playlist, containerId) {
 
         playlistElement.appendChild(playlistInfo);
 
-        // Append the playlist container to the list
+        // append the playlist container to the list
         playlistContainer.appendChild(playlistElement);
     }
 }
 
+
+
+
+// MAIN PAGE UPDATE GREETING
+
+function updateGreeting() {
+    const greetingElement = document.querySelector('main #main h3'); 
+
+    if (greetingElement) {
+        const currentTime = new Date().getHours();
+
+        let greeting;
+
+        if (currentTime >= 5 && currentTime < 12) {
+            greeting = 'Good Morning';
+        } else if (currentTime >= 12 && currentTime < 18) {
+            greeting = 'Good Afternoon';
+        } else {
+            greeting = 'Good Evening';
+        }
+
+        greetingElement.textContent = greeting;
+    }
+}
+
+updateGreeting();
+
+setInterval(updateGreeting, 600000);

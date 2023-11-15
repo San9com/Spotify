@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link rel="stylesheet" href="style-spotify-specific.css">
-    <link rel="stylesheet" href="/style.css">
+    <title>Spotify</title>
+    <link rel="stylesheet" href="style-index.css">
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico">
 </head>
 <body>
     <main>
         <section id="nav">
             <div id="mainNav" class="greyBubble">
-                <article id="Home"><img src="/home-icon.png" alt="home icon"> Home</article>
-                <article id="Search"><img src="/search-icon.png" alt="search icon">Search</article>
+                <article id="Home"><img src="assets/home-icon.png" alt="home icon"> Home</article>
+                <article id="Search"><img src="assets/search-icon.png" alt="search icon">Search</article>
             </div>
             <div id="YourLibrary" class="greyBubble"></div>
         </section>
@@ -36,13 +36,28 @@
         <section id="artist">
             <div id="artistDiv" class="greyBubble">
                 <img src="https://i.scdn.co/image/ab67616d0000b273d5512ab280dcaf3c64a5a80a" alt="Алматинский джаз, Vol. 1">
-                <p>Album: Алматинский джаз, Vol. 1</p>
-                <p>Artists: M'Dee</p></div>
+                <p>Almaty Jazz, Vol. 1</p>
+                <p>M'Dee</p></div>
         </section>
     </main>
     <footer id="player">
         <section id="currentTrack">
             <div id="track-info"></div>
+            <div id="controls">
+                <article class="up">
+                    <img src="assets/shuffle.svg" alt="shuffle" id="shuffle">
+                    <img src="assets/previous-button.png" alt="previous">
+                    <img src="assets/play-button.png" alt="play/pause">
+                    <img src="assets/next-button.png" alt="next">
+                    <img src="assets/repeat.svg" alt="repeat">
+                </article>
+                <article class="down">
+                    <img src="assets/song-progress-bar.svg" alt="">
+                </article>
+            </div>
+            <div id="sound">
+                <img src="assets/volume.svg" alt="">
+            </div>
         </section>
     </footer>
 </body>

@@ -1,0 +1,435 @@
+:root {
+    --background-color: #191414;
+    --font-color: #ffffff;
+    --accent-color: #1DB954;
+    --font-size: 12pt;
+    --border-radius: 4pt;
+  }
+
+  @font-face {
+    font-family: circularstd;
+    src: url(assets/fonts/circularstd-medium-webfont.woff);
+  }
+
+@font-face {
+font-family: circularstdBook;
+src: url(assets/fonts/CircularStd-Book.woff);
+}
+
+body {
+    font-family: circularstdBook;
+    background-color: #090909;
+    color: #9e9e9e;
+    margin: 0;
+    padding: 0;
+    font-size: 9pt;
+    height: 100vh;
+}
+
+
+main{
+    width: 100vw;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+main #main{
+    width: 47vw;
+    display: flex;
+    align-items: flex-start;
+    background-image: linear-gradient(#1E1258, #121212, #121212, #121212);
+    height: 100%;
+    border-radius: 8pt;
+    flex-direction: column;
+    padding-left: 2em;
+    padding-right: 2em;
+    overflow-y: scroll;
+
+}
+
+main #main::-webkit-scrollbar {
+    display: none;
+  }
+
+main #main h3{
+    color: #ffffff;
+    font-weight: 100;
+    font-size: 21pt;
+    font-family: circularstd;
+}
+
+main #main h4{
+    margin-bottom: 0.5em;
+    margin-top: 2em;
+    color: #ffffff;
+    font-weight: 100;
+    font-size: 16pt;
+    font-family: circularstd;
+}
+
+/* navigation bar */ 
+
+main #nav{
+    height: 90vh;
+    width: 25vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+#mainNav{
+    width: 96%;
+    height: 13%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#mainNav #Home{
+    color: #ffffff;
+    font-size: 11pt;
+    font-family: circularstd;
+    padding: 0.5em;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#mainNav #Home img, #mainNav #Search img{
+    height: 1.3em;
+    padding-right: 1em;
+}
+
+#mainNav #Search{
+    font-size: 11pt;
+    font-family: circularstd;
+    padding: 0.5em;
+    width: 80%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+
+#YourLibrary{
+    width: 96%;
+    height: 86%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.greyBubble{
+    background-color: #121212;
+    border-radius: 8pt;
+}
+
+
+main #artist{
+    height: 90vh;
+    width: 25vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Some album mix */
+
+.albumList {
+display: flex;
+flex-wrap: nowrap;
+justify-content: flex-start;
+}
+
+#albumList0{
+    flex-wrap: wrap;
+}
+
+#albumList0 .album {
+    width: 48%;
+    height: 4em;
+    border-radius: 4px;
+    background-color: #ffffff17;
+    margin: 0.3em;
+}
+
+#albumList0 .album:hover {
+    background-color: #ffffff34;
+}
+
+.album {
+background-color: #181818;
+border-radius: 8px;
+margin: 1.6em;
+margin-left: 0;
+overflow: hidden;
+width: 12.2em;
+height: 16.5em;
+transition: 0.3s;
+}
+
+.album:hover {
+background-color: #282828;
+}
+
+.album img {
+width: 100%;
+aspect-ratio: 1/1;
+height: auto;
+border-radius: 8px;
+}
+
+#albumList0 .album img{
+    height: 6vh; 
+    width: 6vh;
+    border-radius: 4pt;
+}
+
+#albumList0 .album-info {
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+#albumList0 .album p {
+    display: none;
+}
+
+#albumList0 .album-info p:nth-child(3) {
+    display: block;
+    padding-left: 1em;
+    font-size: 9.5pt;
+}
+
+.album-info {
+    padding: 1.5em;
+}
+
+.album-info:hover > #playButton{
+    opacity: 1;
+}
+
+.album p {
+margin: 5px 0;
+}
+
+.album-info p:nth-child(3) {
+color: #ffffff;
+font-size: 11pt;
+font-family: circularstd;
+}
+
+
+.album p.album-name {
+font-weight: bold;
+font-size: 16px;
+}
+
+.album p.artists {
+font-size: 14px;
+}
+
+.album p.release-date {
+font-size: 12px;
+}
+
+#playButton{
+    width: 4.5em; opacity: 0; transition: 0.3s;
+    margin-top: -70%;
+    margin-left: -50%;
+    padding: -10ch;
+}
+
+#albumList0 #playButton{
+ margin: 0;
+ padding: 0;   
+ display: none;
+}
+
+/* Your Library */
+
+.playlist{
+    width: 95%;
+    background-color: #28282800;
+    border-radius: 6pt;
+    margin-top: 0.1em;
+    transition: 0.3s;
+}
+
+.playlist:hover{
+    background-color: #1A1A1A;
+}
+
+.playlist-info{
+    display: flex;
+    align-items: center;
+}
+
+.playlist img{
+    width: 14%;
+    height: intrinsic;
+    border-radius: 4pt;
+    margin: 0.7em;
+}
+
+.playlist-info div{
+    font-family: circularstdBook;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.playlist-info div p:nth-child(1){
+    color: #ffffff;
+    font-size: 10pt;
+    margin-bottom: 0.4em;
+}
+
+.playlist-info div p{
+    margin: 0;
+}
+
+/* Current track playing */
+
+#artistDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+    width: 96%;
+    height: 100%;
+
+}
+
+#artistDiv img{
+    width: 90%;
+    height: intrinsic;
+    border-radius: 4pt;
+    margin: 1.5em;
+}
+
+#artistDiv p:nth-child(2){
+    color: #ffffff;
+    font-size: 13pt;
+    font-family: circularstd;
+    padding-left: 1em;
+    margin: 0.2em;
+}
+
+#artistDiv p:nth-child(3){
+    font-size: 11pt;
+    padding-left: 1em;
+    margin: 0.2em;
+}
+
+/* player */
+
+footer{
+    height: 10vh;
+    display: flex;
+    align-items: center;
+}
+
+footer img{
+    cursor: pointer;
+}
+
+footer #currentTrack{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+footer #sound{
+    display: flex;
+    width: 15vw;
+    justify-content: flex-end;
+}
+
+footer #sound img{
+    padding: 1vh;
+    width: 8vw;
+    height: 0.4vh;
+}
+
+footer #controls{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+footer #controls .down img{
+    width: 30vw;
+    height: 0.5vh;
+}
+
+
+footer #controls img{
+    padding-left: 1vh;
+    padding-right: 1vh;
+    width: 3.5vh;
+    height: 3.5vh;
+}
+
+
+footer #track-info{
+    display: flex;
+    padding: 1em;
+    width: 15vw;
+}
+
+footer #track-info img{
+    width: 6.5vh;
+    height: intrinsic;
+    border-radius: 4pt;
+}
+
+footer #track-info p:nth-child(1){
+    color: #ffffff;
+    font-size: 10pt;
+    font-family: circularstd;
+}
+
+footer #track-info div{
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: flex-start;
+    padding-left: 1.5em;
+}
+
+footer #track-info p{
+    margin: 0.1em;
+}
+
+
+
+@media only screen and (max-width: 375px) {
+    main #nav{
+        display: none;
+
+    }
+    main #artist{
+        display: none;
+    }
+    main #main{
+        width: 90vw;
+    }
+
+    #albumList0 .album {
+        width: 46%;
+    }
+    footer{
+        display: none;
+    }
+  }
