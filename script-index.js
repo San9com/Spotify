@@ -1,4 +1,15 @@
+//service worker
 
+if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.register('/sw.js')
+      .then((registration) => {
+        console.log('Service Worker registered with scope:', registration.scope);
+      })
+      .catch((error) => {
+        console.error('Service Worker registration failed:', error);
+      });
+  }
+  
 // ALBUMS
 let lastClickedAlbum = document.querySelectorAll('.album:nth-child(7)');
 
@@ -357,3 +368,14 @@ function updateGreeting() {
 updateGreeting();
 
 setInterval(updateGreeting, 600000);
+
+
+
+function redirectToUrl() {
+
+    var redirectUrl = '/Search.html';
+
+    window.location.href = redirectUrl;
+}
+
+document.getElementById('Search').addEventListener('click', redirectToUrl);
