@@ -6,10 +6,9 @@ body {
     padding: 0;
 }
 
-/* Sidebar Styles */
 .sidebar {
-    width: 232px; /* Updated width */
-    background-color: #000; /* Updated background color */
+    width: 232px;
+    background-color: #000;
     height: 100vh;
     padding: 20px 10px;
     position: fixed;
@@ -41,7 +40,7 @@ body {
 }
 
 .sidebar ul a .not-selected-tab {
-    padding: 10px 0 10px 20px; /* Updated padding for alignment */
+    padding: 10px 0 10px 20px;
     cursor: pointer;
     border-radius: 4px;
     color: #cacaca;
@@ -56,7 +55,7 @@ body {
 
 .sidebar ul a .selected-tab{
     color: white;
-    padding: 10px 0 10px 20px; /* Updated padding for alignment */
+    padding: 10px 0 10px 20px;
     cursor: pointer;
     border-radius: 4px;
     font-size: 24px;
@@ -69,81 +68,79 @@ body {
     height: 32px;
 }
 
-/* Playlist Container Styles */
 #playlist-container {
-    margin-left: 332px; /* Updated to match sidebar width */
+    margin-left: 332px;
     color: white;
-    font-size: 14px; /* Adjusted font size */
+    font-size: 14px;
 }
 
 .playlist-header {
     display: flex;
-    align-items: flex-end; /* Align items to the bottom */
-    padding: 20px 20px 20px 20px; /* Uniform padding */
-    background-color: #181818; /* Updated background color */
+    align-items: flex-end; 
+    padding: 20px 20px 20px 20px;
+    background-color: #181818;
 }
 
 .playlist-cover-img {
-    width: 232px; /* Size of cover image */
-    height: 232px; /* Size of cover image */
-    border-radius: 0; /* Removed border radius for square image */
-    margin-right: 20px; /* Space between image and playlist info */
+    width: 232px;
+    height: 232px;
+    border-radius: 0;
+    margin-right: 20px;
 }
 
 .playlist-info {
-    flex-grow: 1; /* Allow playlist info to fill the available space */
+    flex-grow: 1;
 }
 
 .playlist-info h1 {
-    font-size: 24px; /* Adjusted font size */
-    margin-bottom: 4px; /* Space between playlist name and owner */
+    font-size: 24px;
+    margin-bottom: 4px; 
 }
 
 .playlist-info .playlist-owner {
-    color: #b3b3b3; /* Light grey color for secondary text */
-    font-size: 14px; /* Smaller font size */
+    color: #b3b3b3;
+    font-size: 14px; 
 }
 
 .playlist-info .playlist-total-songs {
-    color: #b3b3b3; /* Light grey color for secondary text */
+    color: #b3b3b3;
 }
 
-/* Song List Styles */
 .songs-list {
-    padding: 20px; /* Padding on the sides */
+    padding: 20px;
     display: flex;
     flex-direction: column;
 }
 
 .song {
     display: grid;
-    grid-template-columns: 40px 300px 300px 300px auto; /* Three columns: number, title & artist, duration */
-    grid-gap: 10px; /* Space between columns */
+    grid-template-columns: 40px 300px 300px 300px auto;
+    grid-gap: 10px;
     align-items: center;
-    padding: 10px 0; /* Padding top and bottom */
-    border-bottom: 1px solid #333; /* Lighter border color */
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
     cursor: pointer;
     font-size: 18px;
 }
 
 .song-number {
-    color: #b3b3b3; /* Light grey color */
+    color: #b3b3b3;
 }
 
 .song-title, .song-artist, .song-album {
-    color: #fff; /* White color for text */
-    padding: 0 10px; /* Padding on the sides */
+    color: #fff;
+    padding: 0 10px;
 }
 
 .song-duration {
-    color: #b3b3b3; /* Light grey color */
-    text-align: right; /* Align duration to the right */
+    color: #b3b3b3;
+    text-align: right;
 }
 
 #audio-player {
-    width: calc(100% - 80px); /* adjust as necessary */
+    width: calc(100% - 80px);
     height: 120px;
-    background-color: #181818; /* dark background */
+    background-color: #181818;
     border-radius: 5px;
     align-items: center;
     bottom: 0;
@@ -176,7 +173,7 @@ body {
   .progress-container {
     width: 60%;
     height: 5px;
-    background-color: #777; /* lighter shade */
+    background-color: #777;
     cursor: pointer;
     position: relative;
     bottom: 20px;
@@ -184,7 +181,7 @@ body {
   .progress {
     width: 0;
     height: 100%;
-    background-color: #0f0; /* green color */
+    background-color: #0f0;
     position: absolute;
 }
 

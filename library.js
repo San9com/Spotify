@@ -1,6 +1,6 @@
-const clientId = '8a51e3a9ce0a480d883b10ad594397b7'; // Replace with your actual client ID
-const clientSecret = '068c9639ad1344f39cccd3964a5a34f4'; // Replace with your actual client secret
-const playlistId1 = '37i9dQZF1EQoqCH7BwIYb7'; // Your playlist ID
+const clientId = '8a51e3a9ce0a480d883b10ad594397b7';
+const clientSecret = '068c9639ad1344f39cccd3964a5a34f4';
+const playlistId1 = '37i9dQZF1EQoqCH7BwIYb7';
 const playlistId2 = '33m1hy2WH7oTsO3Hx033B6';
 
 // Function to retrieve access token from Spotify
