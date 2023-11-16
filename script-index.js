@@ -137,6 +137,7 @@ function displayAlbumList(albums, containerId) {
             const albumWidth = 180;
 
             // check width
+            
             if (containerId === 'albumList0'|| totalWidth + albumWidth <= availableWidth) {
                 totalWidth += albumWidth;
 
@@ -175,11 +176,13 @@ function displayAlbumList(albums, containerId) {
 
 // last clicked album 
 
+// Add this code at the end of your existing JavaScript
+
 function displayLastClickedAlbum() {
     const artistDiv = document.getElementById('artistDiv');
-    artistDiv.innerHTML = ''; 
-    const artistSection = document.querySelector('main #artist')
-    const currentTrackDiv = document.querySelector('#track-info')
+    artistDiv.innerHTML = '';
+    const artistSection = document.querySelector('main #artist');
+    const currentTrackDiv = document.querySelector('#track-info');
     const currentTrackTitles = document.createElement('div');
     currentTrackDiv.innerHTML = '';
 
@@ -203,7 +206,6 @@ function displayLastClickedAlbum() {
         const albumName2 = document.createElement('p');
         const artists2 = document.createElement('p');
 
-
         albumCover2.src = lastClickedAlbum.images && lastClickedAlbum.images.length > 0
             ? lastClickedAlbum.images[0].url
             : 'assets/icons/apple-touch-icon.png';
@@ -215,7 +217,11 @@ function displayLastClickedAlbum() {
             : 'N/A'}`;
 
         // append elements to the artistDiv
-        artistSection.style.display='flex'
+        if (window.innerWidth > 600) {
+            // Only display artistDiv on devices with a width greater than 600 pixels
+            artistSection.style.display = 'flex';
+        }
+
         artistDiv.appendChild(albumCover1);
         artistDiv.appendChild(albumName1);
         artistDiv.appendChild(artists1);
@@ -223,9 +229,9 @@ function displayLastClickedAlbum() {
         currentTrackDiv.appendChild(currentTrackTitles);
         currentTrackTitles.appendChild(albumName2)
         currentTrackTitles.appendChild(artists2);
-
     }
 }
+
 
 // PLAYLISTS
 
