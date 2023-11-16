@@ -50,4 +50,4 @@ This project is licensed under the MIT License.
 
 ## Acknowledgments
 
-Special thanks to the Spotify team abd their API for providing the data that powers this web app.
+Special thanks to the Spotify team and their API for providing the data that powers this web app.
